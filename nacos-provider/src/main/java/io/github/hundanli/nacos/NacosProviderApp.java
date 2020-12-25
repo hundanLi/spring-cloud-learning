@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 public class NacosProviderApp {
     public static void main(String[] args) {
-        SpringApplication.run(NacosProviderApp.class);
+        SpringApplication.run(NacosProviderApp.class, args);
     }
 
     @RestController

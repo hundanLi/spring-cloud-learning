@@ -17,6 +17,7 @@
         <module>nacos-provider</module>
         <module>nacos-consumer</module>
         <module>nacos-config</module>
+        <module>sentinel-sample</module>
     </modules>
 
 </project>

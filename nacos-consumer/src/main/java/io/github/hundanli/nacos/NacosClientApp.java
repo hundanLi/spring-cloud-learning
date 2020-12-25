@@ -21,7 +21,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 public class NacosClientApp {
     public static void main(String[] args) {
-        SpringApplication.run(NacosClientApp.class);
+        SpringApplication.run(NacosClientApp.class, args);
     }
 
     /**
