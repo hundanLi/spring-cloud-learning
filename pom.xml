@@ -18,6 +18,8 @@
         <module>nacos-consumer</module>
         <module>nacos-config</module>
         <module>sentinel-sample</module>
+        <module>openfeign-service</module>
+        <module>openfeign-client</module>
     </modules>
 
 </project>
