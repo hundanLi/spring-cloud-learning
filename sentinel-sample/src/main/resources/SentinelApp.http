@@ -1,0 +1,13 @@
+GET http://localhost:8080/hello/hundanli
+
+
+###
+
+GET http://localhost:8080/rest/hundanli
+
+
+###
+GET http://localhost:8080/li
+
+### Endpoint
+GET http://localhost:8080/actuator/sentinel

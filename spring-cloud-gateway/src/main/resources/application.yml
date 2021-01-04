@@ -1,0 +1,31 @@
+server:
+  port: 10000
+spring:
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:7080
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+        # 快捷配置方式
+        - id: shortcut_route
+          uri: http://localhost:8090/
+          predicates:
+            - Cookie=mycookie,myvalue
+
+        # 完全展开配置方式
+        - id: full_route
+          uri: http://localhost:8091/
+          predicates:
+            - name: Cookie
+              args:
+                name: mycookie
+                regexp: othervalue
+  application:
+    name: spring-cloud-gateway
+

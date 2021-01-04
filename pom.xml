@@ -20,6 +20,7 @@
         <module>sentinel-sample</module>
         <module>openfeign-service</module>
         <module>openfeign-client</module>
+        <module>spring-cloud-gateway</module>
     </modules>
 
 </project>

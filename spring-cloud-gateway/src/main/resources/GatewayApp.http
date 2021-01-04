@@ -1,0 +1,13 @@
+
+### Cookie shortcut predictes
+GET http://localhost:10000
+Content-Type: application/json
+Cookie: mycookie=myvalue
+
+
+### Cookie full expanded predictes
+GET http://localhost:10000
+Content-Type: application/json
+Cookie: mycookie=othervalue
+
+

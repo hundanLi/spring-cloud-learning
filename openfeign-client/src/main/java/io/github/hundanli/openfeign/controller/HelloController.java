@@ -27,4 +27,9 @@ public class HelloController {
     public String postHello(@PathVariable String name) {
         return feignClient.postHello(name);
     }
+
+    @GetMapping
+    public String hello() {
+        return "Hello, feign client!";
+    }
 }
