@@ -8,6 +8,35 @@ Cookie: mycookie=myvalue
 ### Cookie full expanded predictes
 GET http://localhost:10000
 Content-Type: application/json
-Cookie: mycookie=othervalue
+Cookie: mycookie=full
 
 
+### After route
+GET http://localhost:10000
+
+
+### Before route
+GET http://localhost:10000
+
+
+### Between route
+GET http://localhost:10000
+
+
+### Cookie route
+GET http://localhost:10000
+Content-Type: application/json
+Cookie: cookie=value
+
+
+### Header route
+GET http://localhost:10000
+Content-Type: application/json
+Header: X-Request-Id=1
+
+
+### Path Route
+GET http://localhost:10000/red/2
+
+### actuator
+GET http://localhost:10000/actuator/health

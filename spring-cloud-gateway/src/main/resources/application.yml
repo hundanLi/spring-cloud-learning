@@ -1,31 +1,60 @@
 server:
   port: 10000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    enabled-by-default: true
 spring:
+  application:
+    name: spring-cloud-gateway
   cloud:
-    sentinel:
-      transport:
-        port: 8719
-        dashboard: localhost:7080
     gateway:
-      enabled: true
-      discovery:
-        locator:
-          lower-case-service-id: true
       routes:
         # 快捷配置方式
         - id: shortcut_route
-          uri: http://localhost:8090/
+          uri: http://10.120.24.138:10001/shortcut
           predicates:
-            - Cookie=mycookie,myvalue
+            - Cookie=mycookie,shortcut
 
         # 完全展开配置方式
         - id: full_route
-          uri: http://localhost:8091/
+          uri: http://10.120.24.138:10001/full
           predicates:
             - name: Cookie
               args:
                 name: mycookie
-                regexp: othervalue
-  application:
-    name: spring-cloud-gateway
+                regexp: full
+  #      # After Route
+  #      - id: after_route
+  #        uri: http://localhost:10001/after
+  #        predicates:
+  #          - After=2021-01-04T19:51:24.398+08:00[Asia/Shanghai]
+  #      # Before Route
+  #      - id: before_route
+  #        uri: http://localhost:10001/before
+  #        predicates:
+  #          - Before=2021-01-10T19:51:24.398+08:00[Asia/Shanghai]
+  #      # Between Route
+  #      - id: between_route
+  #        uri: http://localhost:10001/between
+  #        predicates:
+  #          - Between=2021-01-04T19:51:24.398+08:00[Asia/Shanghai], 2021-01-10T19:51:24.398+08:00[Asia/Shanghai]
+        # Cookie Route
+        - id: cookie_route
+          uri: http://10.120.24.138:10001/cookie
+          predicates:
+            - Cookie=mycookie,value
+        # Header Route
+        - id: header_route
+          uri: http://10.120.24.138:10001/header
+          predicates:
+            - Header=X-Request-Id, \d+
+        # Path Route
+        - id: path_route
+          uri: lb://gateway-service
+          predicates:
+            - Path=/red/**,/blue/**
+
 

@@ -21,6 +21,7 @@
         <module>openfeign-service</module>
         <module>openfeign-client</module>
         <module>spring-cloud-gateway</module>
+        <module>spring-cloud-gateway-service</module>
     </modules>
 
 </project>
