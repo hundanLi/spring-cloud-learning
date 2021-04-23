@@ -3,15 +3,17 @@ spring:
     nacos:
       discovery:
         enabled: true
-        server-addr: 127.0.0.1:8848
+        server-addr: 10.120.24.107:8848
   application:
     name: nacos-provider-sample
 server:
   port: 8081
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-    enabled-by-default: true
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#    enabled-by-default: false
+#  server:
+#    port: 8527
 
