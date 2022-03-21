@@ -22,6 +22,7 @@
         <module>openfeign-client</module>
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-gateway-service</module>
+        <module>nacos-benchmark</module>
     </modules>
 
 </project>
